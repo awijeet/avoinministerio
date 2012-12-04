@@ -8,7 +8,7 @@ class PagesController < ApplicationController
       when "proposal"
         items = Idea.published.where("collecting_end_date is ? and state = ? and collecting_start_date is not ?", nil, "proposal", nil).order("RAND()").limit(count).includes(:votes).all
       else 
-        items = Idea.published.where(state: state).order("updated_at DESC").limit(count).includes(:votes).all 
+        items = Idea.published.where(state: state).order("RAND()").limit(count).includes(:votes).all 
      end  
     item_counts = {}
 

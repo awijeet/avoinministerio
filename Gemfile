@@ -38,6 +38,7 @@ gem "rspec-rails", :groups => [ :development, :test ]
 group :development do
   gem "rails-erd"
   gem "sqlite3"
+  gem "mysql2"
   gem "unicorn"
   gem "guard", "1.0.3"
   gem "guard-rspec", "0.7.3"

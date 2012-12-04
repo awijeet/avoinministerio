@@ -187,6 +187,7 @@ GEM
     multi_json (1.2.0)
     multipart-post (1.1.5)
     mustache (0.99.4)
+    mysql2 (0.3.11)
     net-http-digest_auth (1.2.1)
     net-http-persistent (2.7)
     newrelic_rpm (3.4.2.1)
@@ -374,6 +375,7 @@ DEPENDENCIES
   launchy
   letters
   libnotify
+  mysql2
   newrelic_rpm (= 3.4.2.1)
   nokogiri
   omniauth-facebook

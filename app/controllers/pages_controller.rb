@@ -58,8 +58,8 @@ class PagesController < ApplicationController
     end
 
     # B: two rows of examples:
-    @proposals, @proposals_counts  = load("proposal", 3)
-    @drafts, @draft_counts        = load("draft",    3)
+    @proposals, @proposals_counts  = load("proposal", 6)
+    @drafts, @draft_counts        = load("draft",    6)
 
     # A: just one row, both proposals and drafts in it
     @proposals_and_drafts = (@proposals + @drafts).sort {|x,y| x.updated_at <=> y.updated_at}

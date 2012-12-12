@@ -6,9 +6,9 @@ class PagesController < ApplicationController
     #items = Idea.published.where(state: state).order("updated_at DESC").limit(count).includes(:votes).all
     case state
       when "proposal"
-        items = Idea.published.where("collecting_end_date is ? and state = ? and collecting_start_date is not ?", nil, "proposal", nil).order("RAND()").limit(count).includes(:votes).all
+        items = Idea.published.where("collecting_end_date is ? and state = ? and collecting_start_date is not ?", nil, "proposal", nil).order("RANDOM()").limit(count).includes(:votes).all
       else 
-        items = Idea.published.where(state: state).order("RAND()").limit(count).includes(:votes).all 
+        items = Idea.published.where(state: state).order("RANDOM()").limit(count).includes(:votes).all 
      end  
     item_counts = {}
 
@@ -58,8 +58,8 @@ class PagesController < ApplicationController
     end
 
     # B: two rows of examples:
-    @proposals, @proposals_counts  = load("proposal", 6)
-    @drafts, @draft_counts        = load("draft",    6)
+    @proposals, @proposals_counts  = load("proposal", 3)
+    @drafts, @draft_counts        = load("draft",    3)
 
     # A: just one row, both proposals and drafts in it
     @proposals_and_drafts = (@proposals + @drafts).sort {|x,y| x.updated_at <=> y.updated_at}
